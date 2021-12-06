@@ -10,11 +10,12 @@
 /* цвет фона героя #2F303A */
 /* цвет черных connect:  */
 
+/* Utilities */
+
 *,
 *::before,
 *::after {
-  box-sizing: inherit /* border-box*/;
-  /* outline: 2px solid tomato; */
+  box-sizing: inherit;
 }
 
 :root {
@@ -42,6 +43,24 @@
   color: var(--primery-text-color);
 }
 
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  /* outline: 2px solid tomato; */
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 ul {
   display: flex;
   list-style: none;
@@ -50,44 +69,42 @@ ul {
   margin: 0;
 }
 
+section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 .section-title {
   color: var(--title-text-color);
+  margin-top: 0;
 }
 
 /* Header */
 .page-header {
   /* position: fixed; */
-  display: block /* flex */;
-  height: 80px;
-  left: 0px;
+  display: flex;
   top: 0px;
-  border: #ececec;
-  background-color: var(--primery-backgraund-color);
+  border: 1px solid var(--primery-backgraund-color);
+  background-color: var(--second-title-color);
 } /* ? */
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  outline: 2px solid tomato;
-}
-
-.navigate {
-  display: flex;
-  justify-content: space-between;
-}
-
-header ul {
+.page-header ul {
   align-items: center;
-  display: inline;
-  /* margin: 0 auto; */
 }
+
+/* .navigate {
+  display: flex;
+} */
 
 .logo {
   display: flex;
+  /*   margin-top: 24px;
+  margin-bottom: 25px; */
+  margin-left: 0;
+  margin-right: 0;
+
   font-size: 26px;
   font-weight: bold;
-  margin: 24px 93px 25px 0;
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
@@ -110,8 +127,10 @@ header ul {
 
 /*Nav Header*/
 
-nav {
+.navi {
   display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
 }
 
 .menu-link {
@@ -133,6 +152,7 @@ nav {
 
 .menu {
   display: flex;
+  margin-left: 93px;
 
   font-weight: 500;
   font-size: 14px;
@@ -141,30 +161,43 @@ nav {
   color: var(--title-txt-color);
 }
 
-.menu a {
+.menu .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--title-text-color);
 }
 
-.menu > .item {
-  margin-right: 50px;
+.menu .item + .item {
+  margin-left: 50px;
 }
+
+/* .menu .item:not(:last-child) {
+  margin-right: 50px;
+  outline: 1px solid red;
+} */
+
+/* .menu .item:last-child {
+  margin-right: 0;
+} */
 
 /* Connect */
 .connect {
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex; */
+  margin-left: auto;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
-.connect a,
+.connect .link,
 .call {
   color: var(--primery-text-color);
 }
 
-.connect li {
+.connect .item + .item {
   margin-left: 50px;
 }
 
@@ -172,10 +205,11 @@ nav {
 .hero {
   width: auto;
   height: auto;
-  /*   margin-left: 0px;
- */
-  /* padding-top: 200px; */
   text-align: center;
+
+  padding-top: 200px;
+  padding-bottom: 200px;
+
   color: var(--second-title-color);
   background-color: var(--second-backgraund-color);
 }
@@ -188,7 +222,7 @@ nav {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 /* Button */
@@ -220,16 +254,16 @@ nav {
   border-color: transparent;
 }
 
-.button.first-of-page-one {
+/* .button.first-of-page-one {
   margin-bottom: 200px;
-}
+} */
 
 /* Advantages */
 
-.advant h2.section-title {
+/* .advant h2.section-title {
   margin: 0 0 58px;
   color: transparent;
-}
+} */
 
 .advant h3 {
   margin-top: 0;
@@ -241,7 +275,8 @@ nav {
 }
 
 .advant ul {
-  margin: 0 0 94px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .advant li {
@@ -267,7 +302,6 @@ nav {
 
 .we-do li {
   margin-right: 30px;
-  margin-bottom: 95px;
   width: 370px;
 }
 
@@ -278,8 +312,8 @@ nav {
 /* Team */
 .section.team {
   background-color: var(--third-backgraund-color);
-  padding-bottom: 94px;
 }
+
 .team h2 {
   font-weight: bold;
   font-size: 36px;
@@ -411,25 +445,37 @@ h1.section-title {
 .gallery ul {
   display: flex;
   /* align-content: space-between; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
   flex-wrap: wrap;
   margin-bottom: 94px;
 }
 
 .gallery li {
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+  /* margin-right: 30px; */
+  /* width: calc((100% - 60px) / 3); */
   height: 404px;
+
   background-color: var(--second-title-color);
-  border: 1px solid #eeeeee;
+  border: 1px solid rgba(238, 238, 238, 1);
   border-radius: 4px;
 }
 
-.gallery li:nth-last-child(-n + 3) {
-  margin-bottom: 0;
+.gallery li:not(:nth-child(3n + 3)) {
+  margin-right: 30px;
 }
+
+.gallery li:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+/* .porto {
+  width: calc((100% - 90px) / 3);
+} */
 
 .imgg {
   width: 370px;
+  /* width: 100%; */
 }
 
 .gallery h3 {
