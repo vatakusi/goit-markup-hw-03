@@ -33,7 +33,7 @@
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
-  background-color: var(--backgraund-color);
+  /* background-color: var(--backgraund-color); */
   color: var(--primery-text-color);
 }
 
@@ -488,7 +488,7 @@ ul.gallery-boxes {
   /* width: 100%; */
 }
 
-.gallery h3 {
+.gallery-boxes h3 {
   font-weight: bold;
   font-size: 18px;
   line-height: 2;
@@ -497,7 +497,7 @@ ul.gallery-boxes {
   color: var(--title-text-color);
 }
 
-.gallery p {
+.gallery-boxes p {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
