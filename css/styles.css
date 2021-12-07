@@ -10,14 +10,6 @@
 /* цвет фона героя #2F303A */
 /* цвет черных connect:  */
 
-/* Utilities */
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 :root {
   --primery-text-color: #757575;
   --title-text-color: #212121;
@@ -31,6 +23,8 @@
   --backgraund-color: #e5e5e5;
 }
 
+/* Utilities */
+
 .page {
   margin: 0; /*обнуляем отступы браузера по 8px*/
   font-family: "Roboto", sans-serif;
@@ -41,6 +35,15 @@
   letter-spacing: 0.03em;
   background-color: var(--backgraund-color);
   color: var(--primery-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
 }
 
 .container {
@@ -64,7 +67,7 @@
 ul {
   display: flex;
   list-style: none;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0;
   margin: 0;
 }
@@ -84,7 +87,7 @@ section {
   /* position: fixed; */
   display: flex;
   top: 0px;
-  border: 1px solid var(--primery-backgraund-color);
+  border-bottom: 1px solid var(--primery-backgraund-color);
   background-color: var(--second-title-color);
 } /* ? */
 
@@ -260,13 +263,13 @@ section {
 
 /* Advantages */
 
-/* .advant h2.section-title {
-  margin: 0 0 58px;
-  color: transparent;
-} */
+.section.advant {
+  padding-bottom: 0;
+}
 
 .advant h3 {
   margin-top: 0;
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: 14px;
   line-height: 1.14;
@@ -290,14 +293,15 @@ section {
 
 /* What we do */
 .we-do .section-title {
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 50px;
+
   font-weight: bold;
   font-size: 36px;
   line-height: 1.166;
   text-align: center;
   letter-spacing: 0.03em;
-  justify-content: center;
-  margin-top: 0;
-  margin-bottom: 50px;
 }
 
 .we-do li {
@@ -326,6 +330,7 @@ section {
 
 .team h3 {
   margin: 0, auto;
+  padding-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
@@ -342,11 +347,16 @@ section {
   letter-spacing: 0.03em;
 }
 
+.team-pitch {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .person {
   height: 370px;
   width: 270px;
   text-align: center;
-  /* margin-bottom: 94px; */
+
   margin-right: 30px;
   background-color: var(--second-title-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -364,12 +374,13 @@ section {
   background-color: var(--second-backgraund-color);
   margin-top: 0;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .foot .logo {
   width: 145px;
   margin-top: 0;
-  /* margin-left: 215px; */
+
   margin-bottom: 20px;
   color: var(--second-title-color);
 }
@@ -377,8 +388,6 @@ section {
 .adress {
   display: flex;
   flex-direction: column;
-  /* margin-left: 215px; */
-  padding-bottom: 60px;
   font-style: normal;
 }
 
@@ -399,9 +408,9 @@ section {
 /* Portfolio page */
 /* Filters */
 
-h1.section-title {
-  color: transparent;
-  margin: 0 0 58px;
+section.portfolio {
+  padding-top: 97px;
+  padding-bottom: 91px;
 }
 
 .filter {
@@ -433,6 +442,7 @@ h1.section-title {
 }
 
 .filter .button {
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.652;
@@ -442,31 +452,31 @@ h1.section-title {
 
 /* Gallery */
 
-.gallery ul {
+ul.gallery-boxes {
   display: flex;
   /* align-content: space-between; */
   /* justify-content: space-between; */
   flex-wrap: wrap;
-  margin-bottom: 94px;
 }
 
-.gallery li {
-  /* margin-bottom: 30px; */
-  /* margin-right: 30px; */
-  /* width: calc((100% - 60px) / 3); */
-  height: 404px;
-
-  background-color: var(--second-title-color);
-  border: 1px solid rgba(238, 238, 238, 1);
-  border-radius: 4px;
-}
-
-.gallery li:not(:nth-child(3n + 3)) {
+.gallery-boxes li:not(:nth-child(3n + 3)) {
   margin-right: 30px;
 }
 
-.gallery li:not(:nth-last-child(-n + 3)) {
+.gallery-boxes li:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
+}
+
+.porto .pitch {
+  padding: 20px 24px;
+  margin-top: -8px;
+  border-right: 1px solid rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  border-left: 1px solid rgba(238, 238, 238, 1);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: var(--second-title-color);
+  /* outline: 1px solid tomato; */
 }
 
 /* .porto {
@@ -483,14 +493,13 @@ h1.section-title {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-left: 24px;
+
   color: var(--title-text-color);
-  margin-bottom: -10px;
 }
+
 .gallery p {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-  margin-left: 24px;
   color: var(--primery-text-color);
 }
