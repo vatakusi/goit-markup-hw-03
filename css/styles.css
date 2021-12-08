@@ -67,7 +67,6 @@ p {
 ul {
   display: flex;
   list-style: none;
-  /* justify-content: space-between; */
   padding: 0;
   margin: 0;
 }
@@ -132,7 +131,6 @@ section {
 
 .navi {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -469,7 +467,6 @@ ul.gallery-boxes {
 
 .porto .pitch {
   padding: 20px 24px;
-  margin-top: -8px;
   border-right: 1px solid rgba(238, 238, 238, 1);
   border-bottom: 1px solid rgba(238, 238, 238, 1);
   border-left: 1px solid rgba(238, 238, 238, 1);
@@ -484,6 +481,7 @@ ul.gallery-boxes {
 } */
 
 .imgg {
+  display: block;
   width: 370px;
   /* width: 100%; */
 }
